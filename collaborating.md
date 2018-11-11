@@ -215,3 +215,43 @@ If you have a repository you want to make available online, you need to first [c
 ```bash
 $ git remote add origin [URL of remote repo]
 ```
+
+Finally, you can upload your changes to the remote repo with `git push`. The first time you push to a new remote, you have to use:
+
+```bash
+$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 2.96 KiB | 1011.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/XavKearney/git-demo/pull/new/master
+remote:
+To github.com:XavKearney/git-demo.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+```
+
+It's worth visiting your repo on GitHub to see how it looks. You'll see it shows each of the files, and you can switch between branches. You can even create, upload & edit files directly from the website.
+
+Your local version of the repo won't stay up to date automatically if people make changes online. To check for changes and download them, use `git pull`. If using branches properly, this should normally be easy. However, sometimes people will have made changes to the online version which are incompatible with what's in your local version. In these cases, `git` will try and resolve the conflicts itself, but anything complicated will have to be resolved manually. I won't get into that here.
+
+#### Pull Requests
+
+Pull requests are the key mechanic used to collaborate smoothly and effectively with `git`. They aren't actually a feature of `git` itself, but of GitHub (and other hosted platforms).
+
+The workflow goes like this:
+
+1. Make sure you have an up-to-date version of the repo (`git pull`) and you're on the `master` branch.
+2. Create a new branch with a sensible name related to what you want to achieve (`git checkout -b my-new-feature`).
+3. Make your changes, committing as often as you like. There has to be at least one commit!
+4. Push those changes up to GitHub (`git push`).
+5. Open a pull request (click the _Pull Requests_ tab and hit _New_). This is a request to merge your changes into the `master` branch. You can provide info in the description about what it's supposed to achieve, including screenshots, links etc.
+6. At this point, your collaborators will be notified via email that you've opened a pull request (PR). They can review it, leaving comments generally or about specific lines of code. Their review can be neutral, or they can approve/deny your request.
+7. More sophisticated repositories will also trigger automatic checks for PRs. Tests will be run, code will be checked for formatting, etc. This, in combination with reviews, ensures that any code is vetted before being merged into the `master` branch, and thus the `master` branch remains 'clean'.
+8. Once a PR is approved and all checks have passed, it can be merged. Sometimes the `master` branch changes significantly in the time it takes to get a PR approved, and so occasionally you'll have to update your branch (by **rebasing** it) before merging. I won't cover the details here.
+9. You're all done! For sophisticated repos, PRs merged into `master` will trigger automatic events, which often includes deploying code live. That's why it's important to be 100% confident in PRs before they're merged!
+
+Once your PR is merged, you can `git checkout master` locally and `git pull` to download the new, updated `master` branch which includes your changes.
