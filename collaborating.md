@@ -123,6 +123,8 @@ $ git checkout -b development
 Switched to a new branch 'development'
 ```
 
+(the `-b` is needed to specify we're creating a new branch)
+
 If we run `git log` again, we'll see that we still have all the commits from the `master` branch, but our `HEAD` is pointing to the `development` branch.
 
 ```bash
