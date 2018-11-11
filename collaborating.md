@@ -196,7 +196,7 @@ Although `git` is great simply as a version control system, the real power comes
 
 Sites like `GitHub` host repositories, both privately and publicly. They also add a layer of collaboration tooling to help smooth your workflow.
 
-Downloading a repository is as simple as finding the URL and running `git clone [repo URL]` to copy it to your local hard drive.
+Downloading a repository is as simple as finding the URL and running `git clone [repo URL]` to copy it to your local hard drive. For _private_ repositories, you'll have to authenticate yourself somehow. You can either do this over HTTPS by typing your username/password every time (slow, tedious), or you can set up SSH key access. See [here](https://help.github.com/articles/connecting-to-github-with-ssh/) for how.
 
 If you have a repository you want to make available online, you need to first [create it](https://github.com/new) and then tell your local repo that it exists, by adding a **remote** repo:
 
