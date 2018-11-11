@@ -177,25 +177,13 @@ Fast-forward
  1 file changed, 1 insertion(+)
 ```
 
-```bash
-$ git log
-* commit c84629a813eeacea8058d431b638514304e47ece (HEAD -> master, development)
-| Author: Xav Kearney <xavkearney@gmail.com>
-| Date:   Sun Nov 11 18:46:46 2018 +0000
-|
-|     Some experimental changes
-|
-* commit 5e66149588896de678d19627e8e599c06a3eb1d2
-| Author: Xav Kearney <xavkearney@gmail.com>
-| Date:   Sun Nov 11 18:36:56 2018 +0000
-|
-|     Added some text
-|
-* commit b371f750fe7a1dbe379bbcbe25fc7284c171fb27
-  Author: Xav Kearney <xavkearney@gmail.com>
-  Date:   Sun Nov 11 18:26:32 2018 +0000
+(`git log --graph --oneline` gives us smaller, prettier output)
 
-      Added the hello file
+```bash
+$ git log --graph --oneline
+* c84629a (HEAD -> master, development) Some experimental changes
+* 5e66149 Added some text
+* b371f75 Added the hello file
 ```
 
 Tada! Our experimental changes are now on the `master` branch too.
