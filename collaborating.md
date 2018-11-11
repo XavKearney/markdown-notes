@@ -50,7 +50,7 @@ Changes to be committed:
         new file:   hello.txt
 ```
 
-The changes are ready to be committed (they're in a new box). Committing the changes is like sealing the box. Once committed, that box can never be reopened or changed.
+The changes are ready to be committed (they're in a new box). Committing the changes is like sealing the box. Once committed, that box can never be changed (but as we'll see later, they can be moved around).
 
 To commit these changes, we type:
 
